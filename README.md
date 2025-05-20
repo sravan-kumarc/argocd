@@ -27,4 +27,8 @@ ________________________________________________________________________________
 
 ![image](https://github.com/user-attachments/assets/a77d7a2c-7ea7-4343-8bce-c9797bba5302)
 
+Replica Count +1 added by sravankumar1006.
+![image](https://github.com/user-attachments/assets/066aa9c3-ef88-40e0-a849-7ab819058d37)
+
+
 ![image](https://github.com/user-attachments/assets/75eb338e-b9f6-4636-b1c9-41f5afd243bf)
