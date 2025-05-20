@@ -6,15 +6,17 @@ This guide will help you install Argo CD on your Kubernetes cluster, expose the 
 **Step 1: Create the argocd Namespace 📂**
 Namespaces help isolate Argo CD resources from other workloads.
 
-kubectl create namespace argocd
+>>kubectl create namespace argocd
 
 Verify the namespace:
-kubectl get namespaces | grep argocd
+>>kubectl get namespaces | grep argocd
+
+
 
 Step 2: Install Argo CD in the argocd Namespace 📥
 Apply the official Argo CD manifest:
 
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+>>kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 This deploys the API server, repo server, controller, and Dex for authentication.
 ________________________________________________________________________________________________________________________
@@ -25,15 +27,15 @@ ________________________________________________________________________________
 
 Step 3: Service to NodePort🔌
 
-kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
+>>kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 
 Step 4: Retrieve Initial Admin Password 🔑
 Get and decode the admin password:
 
-kubectl get secrets -n argocd argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d && echo
+>>kubectl get secrets -n argocd argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d && echo
 
 #Port-Forwarding to 8081🔌
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+>>kubectl port-forward svc/argocd-server -n argocd 8080:443
 ________________________________________________________________________________________________________________________
 **Port-forwarding...........**
 
@@ -46,7 +48,7 @@ ________________________________________________________________________________
 **Additional Tips 💡**
 Scale Argo CD Server for high availability:
 
-kubectl scale deployment argocd-server -n argocd --replicas=2
+>>kubectl scale deployment argocd-server -n argocd --replicas=2
 
 
 ![image](https://github.com/user-attachments/assets/a77d7a2c-7ea7-4343-8bce-c9797bba5302)
