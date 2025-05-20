@@ -22,14 +22,14 @@ sravan@sravankumar:~/AWS_DevOps/k8s/minikube/k8s/k8s-dep-yaml$ kubectl get names
 NAME              STATUS   AGE
 argocd            Active   31h
 ________________________________________________________________________________________________________________________
-Step 3: Expose the Argo CD Server 🌐
-By default, Argo CD server is accessible only inside the cluster.
 
-Step 3: Service to NodePort🔌 
+Step 3: Service to NodePort🔌
+
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 
 Step 4: Retrieve Initial Admin Password 🔑
 Get and decode the admin password:
+
 kubectl get secrets -n argocd argocd-initial-admin-secret -o jsonpath='{.data.password}' | base64 -d && echo
 
 #Port-Forwarding to 8081🔌
