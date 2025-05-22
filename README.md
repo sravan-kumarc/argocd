@@ -21,8 +21,8 @@ Apply the official Argo CD manifest:
 This deploys the API server, repo server, controller, and Dex for authentication.
 ________________________________________________________________________________________________________________________
 sravan@sravankumar:~/AWS_DevOps/k8s/minikube/k8s/k8s-dep-yaml$ kubectl get namespace -n argocd
-NAME              STATUS   AGE
-argocd            Active   31h
+>>NAME              STATUS   AGE
+>>argocd            Active   31h
 ________________________________________________________________________________________________________________________
 
 Step 3: Service to NodePort🔌
